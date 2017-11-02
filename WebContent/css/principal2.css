@@ -1,0 +1,60 @@
+.menu{
+	margin: 0px;
+	padding: 0px;
+}
+
+#menuPrincipal{
+	padding: 0px;
+}
+
+
+
+
+
+
+.borda{
+	border: solid 1px;
+	border-radius: 2px;
+}
+
+.btnMenu{
+	width: 100%;
+}
+
+.campoTexto{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.login{
+	margin-top: 10%;
+}
+
+.botaoLogin{
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.classeRegular{
+	width: 80px;
+}
+
+.logo{
+	width: 100px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.quebraLinha{
+	clear: both;
+}
+
+.color{
+	background-color: rgb(255,255,200);	
+}
+
+.tituloPagina{
+	text-align: center;
+	margin-top: 5px;
+}

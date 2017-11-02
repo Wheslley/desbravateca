@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="shortcut icon" href="http://www.adventistas.org/pt/desbravadores/wp-content/themes/pa-thema-sedes/flavours/static/img/favicons/favicon.ico"/>
+	<link rel='stylesheet' id='js_composer_front-css'  href='http://www.adventistas.org/pt/desbravadores/wp-content/plugins/js_composer/assets/css/js_composer.min.css' type='text/css' media='all' />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script type='text/javascript' src='http://www.adventistas.org/pt/desbravadores/wp-includes/js/jquery/jquery.js'></script>
+	<script type='text/javascript' src='http://www.adventistas.org/pt/desbravadores/wp-content/plugins/wonderplugin-lightbox/engine/wonderpluginlightbox.js'></script>
+	<script type='text/javascript' src='http://www.adventistas.org/pt/desbravadores/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js'></script>
+</h:head>
+
+<h:body class="projetos-template-default single single-projetos postid-1172 pt_BR desbravadores  iasd-institucional wpb-js-composer js-comp-ver-5.4.2 vc_responsive" >
+	<h:form>
+		  <div class="container-fluid">
+			<div class="row">
+			
+			
+				<div class="col-md-12" style="background-color: inherit; color: white; position: absolute;">
+					<div class="col-md-4" style="float: right; background-color: #7f8c8d; margin-top: 10px; border-radius: 10px; border: solid 1px;">
+						<h:outputLabel value="Usuario" style="margin-right: 1%;"/>
+						<h:inputText value="#{user.username}" class="form-control campoTexto" placeholder="Usuario"/>
+						<h:outputLabel value="Senha" style="margin-right: 1%; margin-left: 10px;"/>
+						<h:inputSecret value="#{user.password}" class="form-control campoTexto" placeholder="Senha" />					
+						<h:commandButton value="Logar" action="#{user.getCredencial}" class="btn btn-primary" style="margin-left: 10px; width: 22%;"/>
+					</div>
+				</div>
+				
+				
+				<div style="position: absolute; color: white; top: 40%; left: 30%;">
+					<h1 style="font-size: 72px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">DESBRAVOTECA</h1>
+				</div>
+				
+				
+				<div class="col-md-12 entry-content" style="z-index: -10;">
+					<div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax-image="https://www.youtube.com/watch?v=llnnGHcxGso" data-vc-video-bg="https://www.youtube.com/watch?v=llnnGHcxGso" 
+						class="vc_row wpb_row vc_row-fluid vc_custom_1490288286237 vc_row-has-fill vc_row-o-full-height vc_row-o-columns-middle vc_row-o-content-bottom vc_row-flex vc_video-bg-container">
+						<div class="wpb_column vc_column_container vc_col-sm-12">
+							<div class="vc_column-inner vc_custom_1488911476126">
+								<div class="wpb_wrapper">
+									<div id="uvc-type-wrap-5166"  data-ultimate-target='#uvc-type-wrap-5166'  data-responsive-json-new='{"font-size":"desktop:40px;","line-height":"desktop:30px;"}'  
+										class="uvc-type-wrap  ult-adjust-bottom-margin ult-responsive  uvc-type-align-center  uvc-wrap-73183160959f79ef60b7c4" style="font-weight:bold;text-align:center;">
+															
+										<script type="text/javascript"> jQuery(function($){ $("#typed-73183160959f79ef60b7c4").typed({
+													strings: [""],
+													typeSpeed: 35,
+													backSpeed: 0,
+													startDelay: 200,
+													backDelay: 1500,
+													loop: true,
+													loopCount: false,
+													showCursor: true,
+													cursorChar: "|",
+													attr: null
+												});
+											});
+										</script>
+							
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="vc_row-full-width vc_clearfix">
+					</div>
+				</div>
+			</div>
+		 </div>
+	</h:form>
+</h:body>
+
+
+</html>

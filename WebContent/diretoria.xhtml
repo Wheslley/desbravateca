@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition>
+
+		<h:form>
+			<p:growl id="msgs" showDetail="true" />
+
+			<p:panel id="custom" header="Diretoria" style="margin-bottom:20px; font-size: 16px; margin-top: 10px;">
+				<h:outputText value="Utilize o campo abaixo para buscar um membro da diretoria:" />
+				<h:panelGrid columns="2" cellpadding="20" style="width: 100%;">
+
+					<h:inputText value="" class="form-control campoTexto" style="width: 95%;"/>
+
+					<p:commandButton value="Buscar" type="button" onclick="" class="btn btn-default" />
+					
+					<p:commandButton value="Cadastrar" type="button" onclick="PF('dlg2').show();" class="btn btn-default" />
+					<p:dialog header="Cadastrar - Desbravador" widgetVar="dlg2" modal="true">
+						<h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5">
+					        <p:outputLabel for="console1" value="Usuario:" />
+					        <p:selectOneMenu id="console1" value="" style="width:400px">
+					            <f:selectItem itemLabel="Selecione" itemValue="" />
+					            <f:selectItem itemLabel="Wheslley" itemValue="Wheslley" />
+					            <f:selectItem itemLabel="Jady" itemValue="Jady" />
+					            <f:selectItem itemLabel="Whislley" itemValue="Whislley" />
+					            <f:selectItem itemLabel="Camila" itemValue="Camila" />
+					        </p:selectOneMenu>
+				        </h:panelGrid>
+				        
+				        <h:outputText value="Selecione o novo cargo deste usuario:" />
+				        
+						<h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5">
+					        <p:outputLabel for="console2" value="Cargo:" />
+					        <p:selectOneMenu id="console2" value="" style="width:400px">
+					            <f:selectItem itemLabel="Selecione" itemValue="" />
+					            <f:selectItem itemLabel="Diretor" itemValue="Xbox One" />
+					            <f:selectItem itemLabel="Secretario" itemValue="PS4" />
+					            <f:selectItem itemLabel="Diretor associado" itemValue="Wii U" />
+					            <f:selectItem itemLabel="Conselheiro" itemValue="Xbox One" />
+					            <f:selectItem itemLabel="Instrutor" itemValue="PS4" />
+					            <f:selectItem itemLabel="Capelao" itemValue="Wii U" />
+					        </p:selectOneMenu>
+				        </h:panelGrid>				        				    
+					    
+					    <br/><br/>
+					    
+					    <h:button value="Salvar" class="btn btn-primary btnMenu"></h:button>
+					    <br/>
+					    <h:button value="Cancelar" class="btn btn-danger btnMenu" style="margin-top: 10px;"></h:button>
+					</p:dialog>
+					
+
+				</h:panelGrid>
+				
+				<br/><br/>
+
+				<p:dataTable var="car" value="" style="width: 80%; margin: auto;">
+					<p:column headerText="ID">
+						<h:outputText value="0" />
+					</p:column>
+					<p:column headerText="Nome">
+						<h:outputText value="Whislley" />
+					</p:column>
+					<p:column headerText="Idade">
+						<h:outputText value="24" />
+					</p:column>
+					<p:column headerText="RG">
+						<h:outputText value="487497065" />
+					</p:column>
+					<p:column headerText="CPF">
+						<h:outputText value="43090927802" />
+					</p:column>
+					<p:column headerText="Cargo">
+						<h:outputText value="Conselheiro" />
+					</p:column>					
+				</p:dataTable>
+
+				<f:facet name="actions">
+					<h:commandLink
+						styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default">
+						<h:outputText styleClass="ui-icon ui-icon-help" />
+					</h:commandLink>
+				</f:facet>
+			</p:panel>
+
+		</h:form>
+
+	</ui:composition>
+</body>
+</html>

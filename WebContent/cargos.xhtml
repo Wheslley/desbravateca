@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition>
+
+		<h:form>
+			<p:growl id="msgs" showDetail="true" />
+
+			<p:panel id="custom" header="Cargos" style="margin-bottom:20px; font-size: 16px;">
+				<h:outputText value="Utilize o campo abaixo para buscar um cargo:" />
+				<h:panelGrid columns="2" cellpadding="20" style="width: 100%;">
+
+					<h:inputText value="" class="form-control campoTexto" style="width: 95%;"/>
+
+					
+					<p:commandButton value="Buscar" type="button" onclick="" class="btn btn-default" />
+					
+					<p:commandButton value="Cadastrar" type="button" onclick="PF('dlg2').show();" class="btn btn-default" />
+					<p:dialog header="Cadastrar - Cargo" widgetVar="dlg2" modal="true">
+					    <h:outputText value="Nome:" />
+					    <h:inputText class="form-control campoTexto" style="width: 400px;"></h:inputText>
+					    
+					    <br/><br/>
+					    
+					    <h:button value="Salvar" class="btn btn-primary btnMenu" ></h:button>
+					    <br/>
+					    <h:button value="Cancelar" class="btn btn-danger btnMenu" style="margin-top: 10px;"></h:button>
+					</p:dialog>
+
+				</h:panelGrid>
+				
+				<br/><br/>
+				
+				<p:dataTable var="car" value="" style="width: 80%; margin: auto;">
+					<p:column headerText="ID">
+						<h:outputText value="0" />
+					</p:column>
+					<p:column headerText="Nome">
+						<h:outputText value="Desbravador" />
+					</p:column>
+				</p:dataTable>
+
+				<f:facet name="actions">
+					<h:commandLink
+						styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default">
+						<h:outputText styleClass="ui-icon ui-icon-help" />
+					</h:commandLink>
+				</f:facet>
+			</p:panel>
+
+		</h:form>
+
+	</ui:composition>
+</body>
+</html>

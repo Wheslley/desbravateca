@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition>
+
+		<div class="tituloPagina">
+			<h3 style="margin-top: 0">RANKING</h3>
+		</div>
+
+		<h:form>
+			<p:growl id="msgs" showDetail="true" />
+
+			<p:panel id="custom" header="Cadastrar" style="margin-bottom:20px">
+				<h:outputText
+					value="Preencha os campos abaixo para cadastrar um novo membro:" />
+				<h:panelGrid columns="1" cellpadding="5" style="width: 100%;">
+
+					<div class="campoTexto">
+						<h:outputLabel value="Nome Completo:" />
+						<h:inputText value="" class="form-control" />
+					</div>
+
+					<div class="campoTexto">
+						<h:outputLabel value="Sexo:" />
+						<input type="radio" value="masculino" /><span>masculino</span> <input
+							type="radio" value="feminino" /><span>feminino</span>
+					</div>
+
+					<div class="campoTexto">
+						<h:outputLabel value="Batizado:" />
+						<input type="checkbox" />
+					</div>
+
+					<div class="campoTexto">
+						<h:outputLabel value="Data de nascimento:" />
+						<h:inputText value="" class="form-control campoTexto" />
+					</div>
+
+					<div class="campoTexto">
+						<h:outputLabel value="Telefone:" />
+						<h:inputText value="" class="form-control campoTexto" />
+					</div>
+
+					<div class="campoTexto">
+						<h:outputLabel value="Celular:" />
+						<h:inputText value="" class="form-control campoTexto" />
+					</div>
+
+					<div class="campoTexto">
+						<h:outputLabel value="E-mail:" />
+						<h:inputText value="" class="form-control campoTexto" />
+					</div>
+
+					<div class="campoTexto">
+						<h:outputLabel value="Estado:" />
+						<h:inputText value="" class="form-control campoTexto" />
+					</div>
+
+					<div class="campoTexto">
+						<h:outputLabel value="Cidade:" />
+						<h:inputText value="" class="form-control campoTexto" />
+					</div>
+
+
+				</h:panelGrid>
+
+				<f:facet name="actions">
+					<h:commandLink
+						styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default">
+						<h:outputText styleClass="ui-icon ui-icon-help" />
+					</h:commandLink>
+				</f:facet>
+			</p:panel>
+
+		</h:form>
+
+	</ui:composition>
+</body>
+</html>

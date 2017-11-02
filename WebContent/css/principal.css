@@ -1,0 +1,87 @@
+.menuPrincipal{
+	margin: 0px;
+	padding: 0px;
+	border: none !important;
+	width: 100%;
+	background-color: #191970;
+	background: linear-gradient(#FFFFFF, #FFFFFF); /* Standard syntax */
+}
+
+.menuTitulo{
+	text-align: center !important;
+	font-size: 24px;
+	margin: 0px !important;
+	padding: 0px;
+	padding-left: 10px;
+	background-color: #FFF;
+	width: 100% !important;
+}
+
+.subMenu{
+	width: 100% !important;
+	height: 40px;
+	padding-top: 10px !important;
+	padding-left: 17px !important;
+	background: linear-gradient(#C0C0C0, #C0C0C0); /* Standard syntax */
+}
+
+.divisoria{
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+.borda{
+	border: solid 1px;
+	border-radius: 2px;
+}
+
+.btnMenu{
+	width: 100%;
+}
+
+.campoTexto{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.login{
+	margin-top: 10%;
+}
+
+.botaoLogin{
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.classeRegular{
+	width: 80px;
+}
+
+.logo{
+	width: 100px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.quebraLinha{
+	clear: both;
+}
+
+.color{
+	background-color: rgb(255,255,200);
+}
+
+.tituloPagina{
+	text-align: center;
+	margin-top: 5px;
+}

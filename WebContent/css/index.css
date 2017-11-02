@@ -1,0 +1,178 @@
+*{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.corpoLogin{
+	background-image: url("img/fundo.png");
+}
+
+.cabecalho{
+	background-color: #5F151B;
+}
+
+.rodape{
+	background-color: #5F151B;
+	height: 60px;
+	margin-top: 2%;
+}
+
+.corpoTitulo{
+	text-align: center;
+}
+
+.tituloCabecalho{
+	color: white;
+	font-family: serif;
+	font-size: 54px;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 5px;
+	height: 80px;
+	padding-top: 6px;
+}
+
+.fotoCabecalho{
+	height: 80px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.dadosUsuario{
+	height: 80px;
+	width: 100%;
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.novoMenu{
+	height: 250px; 
+	width: 24%; 
+	margin-left: 0.5%; 
+	margin-right: 0.5%; 
+	margin-top: 5px;
+}
+
+.caixaMenu{
+	width: 90%;
+	margin: auto;
+}
+
+.btnNovoMenu{
+	height: 250px;
+	background-color: white; 
+	box-shadow: 1px 2px 8px 1px #888888;
+}
+
+.subNovoMenu{
+	width: 150px; 
+	height: 150px; 
+	border: solid 1px;
+	border-radius: 50%; 
+	margin: auto; 
+	margin-top: 8%;
+	background-image: url("img/b_amigo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.tituloNovoMenu{
+	margin-left: 5%;
+	width: 50%;
+	font-size: 16px;
+	float: left;
+	font-weight: 600;
+}
+
+.botaoExibir{
+	float: right; 
+	margin-right: 10px;
+	font-size: 16px;
+}
+
+.botao{
+	background-color: white;
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	margin-top: 9px;
+}
+
+.imagemCargos{
+	width: 110px;
+	height: 110px;
+	margin-top: 9px;
+}
+
+.textoSubNovoMenu{
+	font-size: 24px; 
+	color: #5F151B;
+}
+
+.cabecalhoNovoMenu{
+	width: 90%;
+	margin-left: 5%;
+	height: 18%;
+	padding: 0px;
+	padding-top: 2%;
+	border-bottom: solid 1px #C0C0C0;
+}
+
+.corpoNovoMenu{
+	height: 52%;
+	text-align: center;
+}
+
+.detalhesNovoMenu{
+	height: 30%;
+	text-align: center;
+}
+
+.borda{
+	border: solid 1px blue;
+	border-radius: 2px;
+}
+
+.btnMenu{
+	width: 100%;
+}
+
+.campoTexto{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: inline;
+	width: 24%;
+}
+
+.login{
+	margin-top: 10%;
+}
+
+.botaoLogin{
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.classeRegular{
+	width: 80px;
+}
+
+.logo{
+	width: 100px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.quebraLinha{
+	clear: both;
+}
+
+.color{
+	background-color: rgb(255,255,200);	
+}
+
+.tituloPagina{
+	text-align: center;
+	margin-top: 5px;
+}
