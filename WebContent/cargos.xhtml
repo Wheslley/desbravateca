@@ -1,61 +1,158 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-<body>
-	<ui:composition>
 
-		<h:form>
-			<p:growl id="msgs" showDetail="true" />
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css"
+		href="css/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>Inicio</title>
+</h:head>
 
-			<p:panel id="custom" header="Cargos" style="margin-bottom:20px; font-size: 16px;">
-				<h:outputText value="Utilize o campo abaixo para buscar um cargo:" />
-				<h:panelGrid columns="2" cellpadding="20" style="width: 100%;">
+<h:body style="background-color: #f5f6f7;">
+	<h:form>
+		<div class="container-fluid">
 
-					<h:inputText value="" class="form-control campoTexto" style="width: 95%;"/>
+			<div class="row cabecalho">
 
-					
-					<p:commandButton value="Buscar" type="button" onclick="" class="btn btn-default" />
-					
-					<p:commandButton value="Cadastrar" type="button" onclick="PF('dlg2').show();" class="btn btn-default" />
-					<p:dialog header="Cadastrar - Cargo" widgetVar="dlg2" modal="true">
-					    <h:outputText value="Nome:" />
-					    <h:inputText class="form-control campoTexto" style="width: 400px;"></h:inputText>
-					    
-					    <br/><br/>
-					    
-					    <h:button value="Salvar" class="btn btn-primary btnMenu" ></h:button>
-					    <br/>
-					    <h:button value="Cancelar" class="btn btn-danger btnMenu" style="margin-top: 10px;"></h:button>
-					</p:dialog>
+					<div class="col-md-1 fotoCabecalho" style=" 
+						background-image: url('img/man-user.png'); 
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center;">
+					</div>
+					<div class="col-md-2">
 
-				</h:panelGrid>
+						<p:panelGrid columns="2" class="dadosUsuario">
+
+							<h:outputText value="Nome:" />
+						
+							<h:outputText value="#{sessionScope.usuario}" />
+
+							<h:outputText value="Cargo:" />
+							<h:outputText value="#{sessionScope.permissao}" />
+
+						</p:panelGrid>
+					</div>
+
+					<div class="col-md-4 col-md-offset-1 corpoTitulo">
+						<h1 class="tituloCabecalho">DESBRAVOTECA</h1>
+					</div>
+
+					<div class="col-md-2 col-md-offset-2" style="padding-top: 5px; padding-bottom: 5px;">
+						<h:commandButton action="#{paginaInicial.getInicio}" class="btn btn-default" style="width: 45%; margin-right: 5px;" value="Inicio"></h:commandButton>
+						<h:commandButton action="#{paginaInicial.getSair}" class="btn btn-default" style="width: 45%;" value="Sair"></h:commandButton>
+					</div>
+
+			</div>
+			
+			<div class="col-md-12 corpoTitulo">
+				<h1 class="" style="color: black; font-size: 30px;">CARGOS</h1>
+			</div>
+			
+			<div class="row caixaMenu"  style="min-height: 500px;">
+			
+
+					<div  class="col-md-3" style="margin-top: 2%; padding: 0px;" >
+						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
+							<div class="cabecalhoNovoMenu ">
+								<p class="tituloNovoMenu">Cadastrar</p>
+								<p:commandLink class="botaoExibir" value="exibir" action="#{cargos.cargosCadastroRetorno}"></p:commandLink>
+							</div>
+							<div class="corpoNovoMenu">
+								
+								<p:commandLink class="botao" action="#{cargos.cargosCadastroRetorno}">
+									<p:graphicImage class="imagemCargos" value="img/b_amigo.png">
+									</p:graphicImage>
+								</p:commandLink>
+								
+							</div>
+							<div class="detalhesNovoMenu ">
+								<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para cadastrar um novo cargo.</p>
+							</div>
+						</div>
+					</div>
+
 				
-				<br/><br/>
+					<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
+						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
+							<div class="cabecalhoNovoMenu ">
+								<p class="tituloNovoMenu">Listar</p>
+								<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+							</div>
+							<div class="corpoNovoMenu">
+								
+								<p:commandLink class="botao">
+									<p:graphicImage class="imagemCargos" value="img/b_companheiro.png">
+									</p:graphicImage>
+								</p:commandLink>
+								
+							</div>
+							<div class="detalhesNovoMenu ">
+								<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para listar todos os cargos cadastrados.</p>
+							</div>
+						</div>
+					</div>
 				
-				<p:dataTable var="car" value="" style="width: 80%; margin: auto;">
-					<p:column headerText="ID">
-						<h:outputText value="0" />
-					</p:column>
-					<p:column headerText="Nome">
-						<h:outputText value="Desbravador" />
-					</p:column>
-				</p:dataTable>
+				
+				<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
+					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
+						<div class="cabecalhoNovoMenu ">
+							<p class="tituloNovoMenu">Alterar</p>
+							<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+						</div>
+						<div class="corpoNovoMenu">
+							
+							<p:commandLink class="botao">
+								<p:graphicImage class="imagemCargos" value="img/b_excursionista.png">
+								</p:graphicImage>
+							</p:commandLink>
+							
+						</div>
+						<div class="detalhesNovoMenu ">
+							<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para alterar um cargo.</p>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
+					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
+						<div class="cabecalhoNovoMenu ">
+							<p class="tituloNovoMenu">Excluir</p>
+							<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+						</div>
+						<div class="corpoNovoMenu">
+							
+							<p:commandLink class="botao">
+								<p:graphicImage class="imagemCargos" value="img/b_guia.png">
+								</p:graphicImage>
+							</p:commandLink>
+							
+						</div>
+						<div class="detalhesNovoMenu ">
+							<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para excluir determinado cargo.</p>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+								
 
-				<f:facet name="actions">
-					<h:commandLink
-						styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default">
-						<h:outputText styleClass="ui-icon ui-icon-help" />
-					</h:commandLink>
-				</f:facet>
-			</p:panel>
+			<div class="row rodape">
+			</div>
 
-		</h:form>
+		</div>
+	</h:form>
+</h:body>
 
-	</ui:composition>
-</body>
+
 </html>

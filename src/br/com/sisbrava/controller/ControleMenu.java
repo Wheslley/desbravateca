@@ -31,17 +31,33 @@ public class ControleMenu {
 		this.controleMenu = "cargos.xhtml";
 	}
 	
+			public String cargosRetorno() {
+				return "cargos.xhtml";
+			}
+	
 	public void desbravadores() {
 		this.controleMenu = "desbravadores.xhtml";
 	}
+	
+			public String desbravadoresRetorno() {
+				return "desbravadores.xhtml";
+			}
 	
 	public void especialidades() {
 		this.controleMenu = "especialidades.xhtml";
 	}
 	
+			public String especialidadesRetorno() {
+				return "especialidades.xhtml";
+			}
+	
 	public void classesRegulares() {
 		this.controleMenu = "classesRegulares.xhtml";
 	}
+	
+			public String classesRegularesRetorno() {
+				return "classesRegulares.xhtml";
+			}
 	
 	public void classesAvancadas() {
 		this.controleMenu = "classesAvancadas.xhtml";
@@ -55,9 +71,17 @@ public class ControleMenu {
 		this.controleMenu = "clube.xhtml";
 	}
 	
+			public String clubeRetorno() {
+				return "clube.xhtml";
+			}
+	
 	public void coordenadoria() {
 		this.controleMenu = "coordenadoria.xhtml";
 	}
+	
+			public String coordenadoriaRetorno() {
+				return "coordenadoria.xhtml";
+			}
 	
 	public void eventos() {
 		this.controleMenu = "eventos.xhtml";

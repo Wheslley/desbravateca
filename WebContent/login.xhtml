@@ -32,14 +32,27 @@
 						<h:outputLabel value="Senha" style="margin-right: 1%; margin-left: 10px;"/>
 						<h:inputSecret value="#{login.password}" class="form-control campoTexto" placeholder="Senha" />					
 						<h:commandButton value="Logar" action="#{login.getCredencial}" class="btn btn-primary" style="margin-left: 10px; width: 22%;"/>
+						<p:commandLink value="Cadastrar" type="button" onclick="PF('cadastrarLogin').show();" style="color: white;"></p:commandLink>
 					</div>
 				</div>
+				
+				<h:form>
+					<p:dialog header="Cadastrar Login" widgetVar="cadastrarLogin" modal="true" class="modalCadastroLogin" 
+					style="height: 300px;">
+					    <h:outputLabel value="E-mail" style="margin-right: 1%;"/>
+						<p:inputText value="#{login.email}" class="form-control" placeholder="email"></p:inputText>
+						<h:outputLabel value="Usuario" style="margin-right: 1%;"/>
+						<p:inputText value="#{login.usernameCadastro}" class="form-control" placeholder="usuario"></p:inputText>
+						<h:outputLabel value="Senha" style="margin-right: 1%;"/>
+						<p:password value="#{login.passwordCadastro}" class="form-control" placeholder="senha"></p:password>
+						<h:commandButton value="Cadastrar" action="#{login.getCadastroLogin}" class="btn btn-primary" style="margin-top: 10px; margin-left: calc(50% - 50px); width: 100px;"/>
+					</p:dialog>
+				</h:form>
 				
 				
 				<div style="position: absolute; color: white; top: 40%; left: 30%;">
 					<h1 style="font-size: 72px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">DESBRAVOTECA</h1>
 				</div>
-				
 				
 				<div class="col-md-12 entry-content" style="z-index: -10;">
 					<div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax-image="https://www.youtube.com/watch?v=llnnGHcxGso" data-vc-video-bg="https://www.youtube.com/watch?v=llnnGHcxGso" 
@@ -73,6 +86,9 @@
 					<div class="vc_row-full-width vc_clearfix">
 					</div>
 				</div>
+				
+				
+
 			</div>
 		 </div>
 	</h:form>

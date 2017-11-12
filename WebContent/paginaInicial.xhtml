@@ -54,16 +54,16 @@
 			
 			<div class="row caixaMenu" >
 			
-				<h:form rendered="#{sessionScope.permissao eq 'Administrador' or sessionScope.permissao eq 'Coordenador'}">
+<!-- 				<h:form rendered="#{sessionScope.permissao eq 'ADMINISTRADOR' or sessionScope.permissao eq 'COORDENADOR'}"> -->
 					<div  class="col-md-4" style="margin-top: 2%; padding: 0px;" >
 						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 							<div class="cabecalhoNovoMenu ">
 								<p class="tituloNovoMenu">Cargos</p>
-								<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+								<p:commandLink class="botaoExibir" value="exibir" action="#{logic.cargosRetorno}"></p:commandLink>
 							</div>
 							<div class="corpoNovoMenu">
 								
-								<p:commandLink class="botao">
+								<p:commandLink class="botao" action="#{logic.cargosRetorno}">
 									<p:graphicImage class="imagemCargos" value="img/b_amigo.png">
 									</p:graphicImage>
 								</p:commandLink>
@@ -74,19 +74,18 @@
 							</div>
 						</div>
 					</div>
-				</h:form>
+<!-- 				</h:form> -->
 				
-				
-				<h:form rendered="#{sessionScope.permissao eq 'Administrador' or sessionScope.permissao eq 'Diretor' or sessionScope.permissao eq 'Diretora' or sessionScope.permissao eq 'Secretario' or sessionScope.permissao eq 'Secretaria'}">
+<!-- 				<h:form rendered="#{sessionScope.permissao eq 'ADMINISTRADOR' or sessionScope.permissao eq 'DIRETOR' or sessionScope.permissao eq 'DIRETORIA' or sessionScope.permissao eq 'SECRETARIO' or sessionScope.permissao eq 'SECRETARIA'}"> -->
 					<div class="col-md-4" style="margin-top: 2%; padding: 0px;">
 						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 							<div class="cabecalhoNovoMenu ">
 								<p class="tituloNovoMenu">Desbravadores</p>
-								<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+								<p:commandLink class="botaoExibir" value="exibir" action="#{logic.desbravadoresRetorno}"></p:commandLink>
 							</div>
 							<div class="corpoNovoMenu">
 								
-								<p:commandLink class="botao">
+								<p:commandLink class="botao" action="#{logic.desbravadoresRetorno}">
 									<p:graphicImage class="imagemCargos" value="img/b_companheiro.png">
 									</p:graphicImage>
 								</p:commandLink>
@@ -97,18 +96,18 @@
 							</div>
 						</div>
 					</div>
-				</h:form>
+<!-- 				</h:form> -->
 				
 				
 				<div class="col-md-4" style="margin-top: 2%; padding: 0px;">
 					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 						<div class="cabecalhoNovoMenu ">
 							<p class="tituloNovoMenu">Especialidades</p>
-							<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+							<p:commandLink class="botaoExibir" value="exibir" action="#{logic.especialidadesRetorno}"></p:commandLink>
 						</div>
 						<div class="corpoNovoMenu">
 							
-							<p:commandLink class="botao">
+							<p:commandLink class="botao" action="#{logic.especialidadesRetorno}">
 								<p:graphicImage class="imagemCargos" value="img/b_excursionista.png">
 								</p:graphicImage>
 							</p:commandLink>
@@ -125,11 +124,11 @@
 					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 						<div class="cabecalhoNovoMenu ">
 							<p class="tituloNovoMenu">Classes Regulares</p>
-							<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+							<p:commandLink class="botaoExibir" value="exibir" action="#{logic.classesRegularesRetorno}"></p:commandLink>
 						</div>
 						<div class="corpoNovoMenu">
 							
-							<p:commandLink class="botao">
+							<p:commandLink class="botao" action="#{logic.classesRegularesRetorno}">
 								<p:graphicImage class="imagemCargos" value="img/b_guia.png">
 								</p:graphicImage>
 							</p:commandLink>
@@ -142,7 +141,7 @@
 				</div>
 				
 				
-				<div class="col-md-4" style="margin-top: 2%; padding: 0px;">
+				<div class="col-md-4" style="margin-top: 2%; padding: 0px; display: none;">
 					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 						<div class="cabecalhoNovoMenu ">
 							<p class="tituloNovoMenu">Classes Avancadas</p>
@@ -163,16 +162,16 @@
 				</div>
 				
 				
-				<h:form rendered="#{sessionScope.permissao eq 'Administrador' or sessionScope.permissao eq 'Coordenador' or sessionScope.permissao eq 'Regional'}">
+<!-- 				<h:form rendered="#{sessionScope.permissao eq 'ADMINISTRADOR' or sessionScope.permissao eq 'COORDENADOR' or sessionScope.permissao eq 'REGIONAL'}"> -->
 					<div class="col-md-4" style="margin-top: 2%; padding: 0px;">
 						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 							<div class="cabecalhoNovoMenu ">
 								<p class="tituloNovoMenu">Clube</p>
-								<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+								<p:commandLink class="botaoExibir" value="exibir" action="#{logic.clubeRetorno}"></p:commandLink>
 							</div>
 							<div class="corpoNovoMenu">
 								
-								<p:commandLink class="botao">
+								<p:commandLink class="botao" action="#{logic.clubeRetorno}">
 									<p:graphicImage class="imagemCargos" value="img/b_pioneiro.png">
 									</p:graphicImage>
 								</p:commandLink>
@@ -183,19 +182,19 @@
 							</div>
 						</div>
 					</div>
-				</h:form>
+<!-- 				</h:form> -->
 				
 				
-				<h:form rendered="#{sessionScope.permissao eq 'Administrador' or sessionScope.permissao eq 'Coordenador'}">
-					<div class="col-md-4" style="margin-top: 2%; padding: 0px;">
+<!-- 				<h:form rendered="#{sessionScope.permissao eq 'ADMINISTRADOR' or sessionScope.permissao eq 'COORDENADOR'}"> -->
+					<div class="col-md-4" style="margin-top: 2%; padding: 0px; display: none;">
 						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 							<div class="cabecalhoNovoMenu ">
 								<p class="tituloNovoMenu">Coordenadoria</p>
-								<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+								<p:commandLink class="botaoExibir" value="exibir" action="#{logic.coordenadoriaRetorno}"></p:commandLink>
 							</div>
 							<div class="corpoNovoMenu">
 								
-								<p:commandLink class="botao">
+								<p:commandLink class="botao" action="#{logic.coordenadoriaRetorno}">
 									<p:graphicImage class="imagemCargos" value="img/b_amigo.png">
 									</p:graphicImage>
 								</p:commandLink>
@@ -206,11 +205,11 @@
 							</div>
 						</div>
 					</div>
-				</h:form>
+<!-- 				</h:form> -->
 				
 				
-				<h:form rendered="#{sessionScope.permissao eq 'Administrador' or sessionScope.permissao eq 'Coordenador' or sessionScope.permissao eq 'Distrital' or sessionScope.permissao eq 'Regional' or sessionScope.permissao eq 'Diretor' or sessionScope.permissao eq 'Diretora'}">
-					<div class="col-md-4" style="margin-top: 2%; padding: 0px;">
+<!-- 				<h:form rendered="#{sessionScope.permissao eq 'ADMINISTRADOR' or sessionScope.permissao eq 'COORDENADOR' or sessionScope.permissao eq 'DISTRITAL' or sessionScope.permissao eq 'REGIONAL' or sessionScope.permissao eq 'DIRETOR' or sessionScope.permissao eq 'DIRETORIA'}"> -->
+					<div class="col-md-4" style="margin-top: 2%; padding: 0px; display: none;">
 						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 							<div class="cabecalhoNovoMenu ">
 								<p class="tituloNovoMenu">Login</p>
@@ -229,7 +228,7 @@
 							</div>
 						</div>
 					</div>
-				</h:form>
+<!-- 				</h:form> -->
 			</div>
 
 			<div class="row rodape">
