@@ -44,5 +44,20 @@ public class ClasseRegular {
 	public String classeRegularCadastroRetorno() {
 		return "classesRegularesCadastro.xhtml";
 	}
+	
+	public String classeRegularListarRetorno() {
+		return "classesRegularesListar.xhtml";
+	}
+	
+	public String classeRegularAlterarRetorno() {
+		return "classesRegularesAlterar.xhtml";
+	}
+	
+	public String classeRegularExcluirRetorno() {
+		return "classesRegularesExcluir.xhtml";
+	}
+	public String classeRegularCadastroVoltar() {
+		return "classesRegulares.xhtml";
+	}
 
 }

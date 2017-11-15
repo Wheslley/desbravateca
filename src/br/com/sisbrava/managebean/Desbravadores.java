@@ -120,5 +120,20 @@ public class Desbravadores {
 	public String desbravadoresCadastroRetorno() {
 		return "desbravadoresCadastro.xhtml";
 	}
+	
+	public String desbravadoresListarRetorno() {
+		return "desbravadoresListar.xhtml";
+	}
+	
+	public String desbravadoresAlterarRetorno() {
+		return "desbravadoresAlterar.xhtml";
+	}
+	
+	public String desbravadoresExcluirRetorno() {
+		return "desbravadoresExcluir.xhtml";
+	}
+	public String desbravadoresCadastroVoltar() {
+		return "desbravadores.xhtml";
+	}
 
 }

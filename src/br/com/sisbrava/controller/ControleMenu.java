@@ -4,104 +4,111 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean(name = "logic")
 public class ControleMenu {
-	
+
 	private String controleMenu = "";
 
 	public String getControle() {
 		return controleMenu;
 	}
-
+	
 	public void setControle(String controleMenu) {
 		this.controleMenu = controleMenu;
 	}
 	
-	public void cronogramaAnual() {
-		this.controleMenu = "cronogramaAnual.xhtml";
-	}
-	
-	public void progressoRanking() {
-		this.controleMenu = "progressoRanking.xhtml";
-	}
-	
-	public void diretoria() {
-		this.controleMenu = "diretoria.xhtml";
-	}
+	/**
+	 * Cargos
+	 * */
 	
 	public void cargos() {
 		this.controleMenu = "cargos.xhtml";
 	}
+
+	public String cargosRetorno() {
+		return "cargos.xhtml";
+	}
 	
-			public String cargosRetorno() {
-				return "cargos.xhtml";
-			}
+	/**
+	 * Desbravadores
+	 * */
 	
 	public void desbravadores() {
 		this.controleMenu = "desbravadores.xhtml";
 	}
+
+	public String desbravadoresRetorno() {
+		return "desbravadores.xhtml";
+	}
 	
-			public String desbravadoresRetorno() {
-				return "desbravadores.xhtml";
-			}
+	/**
+	 * Especialidades
+	 * */
 	
 	public void especialidades() {
 		this.controleMenu = "especialidades.xhtml";
 	}
 	
-			public String especialidadesRetorno() {
-				return "especialidades.xhtml";
-			}
+	public String especialidadesRetorno() {
+		return "especialidades.xhtml";
+	}
+	
+	/**
+	 * Classes Regulares e Avançadas
+	 * */
 	
 	public void classesRegulares() {
 		this.controleMenu = "classesRegulares.xhtml";
 	}
-	
-			public String classesRegularesRetorno() {
-				return "classesRegulares.xhtml";
-			}
-	
-	public void classesAvancadas() {
-		this.controleMenu = "classesAvancadas.xhtml";
+
+	public String classesRegularesRetorno() {
+		return "classesRegulares.xhtml";
 	}
 	
-	public void ranking() {
-		this.controleMenu = "ranking.xhtml";
-	}
+	/**
+	 * Clubes
+	 * */
 	
 	public void clube() {
 		this.controleMenu = "clube.xhtml";
 	}
+
+	public String clubeRetorno() {
+		return "clube.xhtml";
+	}
 	
-			public String clubeRetorno() {
-				return "clube.xhtml";
-			}
+	/**
+	 * Coordenadoria
+	 * */
 	
 	public void coordenadoria() {
 		this.controleMenu = "coordenadoria.xhtml";
 	}
-	
-			public String coordenadoriaRetorno() {
-				return "coordenadoria.xhtml";
-			}
-	
-	public void eventos() {
-		this.controleMenu = "eventos.xhtml";
+
+	public String coordenadoriaRetorno() {
+		return "coordenadoria.xhtml";
 	}
 	
-	public void login() {
-		this.controleMenu = "cadLogin.xhtml";
+	/**
+	 * Acesso ao Sistema
+	 * */
+	
+	public void conta() {
+		this.controleMenu = "conta.xhtml";
 	}
+
+	public String contaRetorno() {
+		return "conta.xhtml";
+	}
+	
+	/**
+	 * Acesso ao Sistema
+	 * */
+	
+	public void evento() {
+		this.controleMenu = "evento.xhtml";
+	}
+
+	public String eventoRetorno() {
+		return "evento.xhtml";
+	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

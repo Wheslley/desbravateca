@@ -52,11 +52,15 @@
 
 			</div>
 			
-			<div class="col-md-12 corpoTitulo">
-				<h1 class="" style="color: black; font-size: 30px;">CLUBE - CADASTRO</h1>
+			<div class="row" style="width: 80%; margin: auto; margin-top: 10px; margin-bottom: 10px; border-bottom: solid 1px #CCC;">
+				<div class="col-md-11 corpoTitulo">
+					<h:commandButton action="#{clubes.clubeCadastroVoltar}" class="btn btn-default" 
+						style="float: left; width: 70px; border-radius: 50px; margin-top: 12px;" value="voltar"></h:commandButton>
+					<h1 style="color: black; font-size: 30px; margin-top: 12px;">CLUBE - CADASTRO</h1>
+				</div>
 			</div>
 			
-			<div class="row caixaMenu" style="min-height: 500px;" >
+			<div class="row caixaMenu" style="min-height: 450px; width: 80%;" >
 				
 				<h:outputLabel value="Descricao" style="margin-right: 1%;"/>
 				<p:inputText value="#{clubes.descricao}"  class="form-control" placeholder="descricao"></p:inputText>

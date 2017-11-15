@@ -74,7 +74,7 @@
 								
 							</div>
 							<div class="detalhesNovoMenu ">
-								<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para cadastrar um novo cargo.</p>
+								<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para cadastrar um novo desbravador.</p>
 							</div>
 						</div>
 					</div>
@@ -84,18 +84,18 @@
 						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 							<div class="cabecalhoNovoMenu ">
 								<p class="tituloNovoMenu">Listar</p>
-								<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+								<p:commandLink class="botaoExibir" value="exibir" action="#{desbravadores.desbravadoresListarRetorno}"></p:commandLink>
 							</div>
 							<div class="corpoNovoMenu">
 								
-								<p:commandLink class="botao">
+								<p:commandLink class="botao" action="#{desbravadores.desbravadoresListarRetorno}">
 									<p:graphicImage class="imagemCargos" value="img/b_companheiro.png">
 									</p:graphicImage>
 								</p:commandLink>
 								
 							</div>
 							<div class="detalhesNovoMenu ">
-								<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para listar todos os cargos cadastrados.</p>
+								<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para listar todos os desbravadores cadastrados.</p>
 							</div>
 						</div>
 					</div>
@@ -105,18 +105,18 @@
 					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 						<div class="cabecalhoNovoMenu ">
 							<p class="tituloNovoMenu">Alterar</p>
-							<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+							<p:commandLink class="botaoExibir" value="exibir" action="#{desbravadores.desbravadoresAlterarRetorno}"></p:commandLink>
 						</div>
 						<div class="corpoNovoMenu">
 							
-							<p:commandLink class="botao">
+							<p:commandLink class="botao" action="#{desbravadores.desbravadoresAlterarRetorno}">
 								<p:graphicImage class="imagemCargos" value="img/b_excursionista.png">
 								</p:graphicImage>
 							</p:commandLink>
 							
 						</div>
 						<div class="detalhesNovoMenu ">
-							<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para alterar um cargo.</p>
+							<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para alterar um desbravador.</p>
 						</div>
 					</div>
 				</div>
@@ -126,18 +126,18 @@
 					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 						<div class="cabecalhoNovoMenu ">
 							<p class="tituloNovoMenu">Excluir</p>
-							<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+							<p:commandLink class="botaoExibir" value="exibir" action="#{desbravadores.desbravadoresExcluirRetorno}"></p:commandLink>
 						</div>
 						<div class="corpoNovoMenu">
 							
-							<p:commandLink class="botao">
+							<p:commandLink class="botao" action="#{desbravadores.desbravadoresExcluirRetorno}">
 								<p:graphicImage class="imagemCargos" value="img/b_guia.png">
 								</p:graphicImage>
 							</p:commandLink>
 							
 						</div>
 						<div class="detalhesNovoMenu ">
-							<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para excluir determinado cargo.</p>
+							<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para excluir determinado desbravador.</p>
 						</div>
 					</div>
 				</div>

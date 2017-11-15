@@ -182,12 +182,36 @@
 	color: white;
 }
 
+.tabela{
+	border: solid 1px #ccc;
+	width: 80%;
+	margin: auto;
+}
 
+.cabecalhoTabela{
+	border: solid 1px #ccc;
+	text-align: center;
+	font-size: 18px;
+}
 
+.primeiro{
+	border: solid 1px #ccc;
+	text-align: center;
+}
 
+.ultimo{
+	border: solid 1px #ccc;
+	text-align: center;
+}
 
+.imagemFooterContato{
+	width: 30px;
+	height: 30px;
+}
 
-
+.separadorDashboard{
+	margin: 50px;
+}
 
 
 

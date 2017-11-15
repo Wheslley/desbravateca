@@ -84,11 +84,11 @@
 						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 							<div class="cabecalhoNovoMenu ">
 								<p class="tituloNovoMenu">Listar</p>
-								<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+								<p:commandLink class="botaoExibir" value="exibir" action="#{cargos.cargosListarRetorno}"></p:commandLink>
 							</div>
 							<div class="corpoNovoMenu">
 								
-								<p:commandLink class="botao">
+								<p:commandLink class="botao" action="#{cargos.cargosListarRetorno}">
 									<p:graphicImage class="imagemCargos" value="img/b_companheiro.png">
 									</p:graphicImage>
 								</p:commandLink>
@@ -105,11 +105,11 @@
 					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 						<div class="cabecalhoNovoMenu ">
 							<p class="tituloNovoMenu">Alterar</p>
-							<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+							<p:commandLink class="botaoExibir" value="exibir" action="#{cargos.cargosAlterarRetorno}"></p:commandLink>
 						</div>
 						<div class="corpoNovoMenu">
 							
-							<p:commandLink class="botao">
+							<p:commandLink class="botao" action="#{cargos.cargosAlterarRetorno}">
 								<p:graphicImage class="imagemCargos" value="img/b_excursionista.png">
 								</p:graphicImage>
 							</p:commandLink>
@@ -126,11 +126,11 @@
 					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
 						<div class="cabecalhoNovoMenu ">
 							<p class="tituloNovoMenu">Excluir</p>
-							<p:commandLink class="botaoExibir" value="exibir"></p:commandLink>
+							<p:commandLink class="botaoExibir" value="exibir" action="#{cargos.cargosExcluirRetorno}"></p:commandLink>
 						</div>
 						<div class="corpoNovoMenu">
 							
-							<p:commandLink class="botao">
+							<p:commandLink class="botao" action="#{cargos.cargosExcluirRetorno}">
 								<p:graphicImage class="imagemCargos" value="img/b_guia.png">
 								</p:graphicImage>
 							</p:commandLink>
