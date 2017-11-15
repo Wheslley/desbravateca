@@ -6,15 +6,15 @@ import javax.faces.bean.ManagedBean;
 public class PaginaInicial {
 
 	public String getInicio() {
-
 		return "paginaInicial";
-
 	}
 
 	public String getSair() {
-
 		return "login";
-
+	}
+	
+	public String getEventos() {
+		return "eventos";
 	}
 
 }
