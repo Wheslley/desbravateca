@@ -15,6 +15,7 @@ public class Cargos {
 	private String id;
 	private String descricao;
 	private List<Cargo> listaCargos;
+	private List<Cargo> listaCargosFiltrados;
 	
 	public List<Cargo> getListaCargos(){
 		
@@ -117,4 +118,16 @@ public class Cargos {
 		return "cargos.xhtml";
 	}
 
+	public List<Cargo> getListaCargosFiltrados() {
+		return listaCargosFiltrados;
+	}
+
+	public void setListaCargosFiltrados(List<Cargo> listaCargosFiltrados) {
+		this.listaCargosFiltrados = listaCargosFiltrados;
+	}
+
+	public void setListaCargos(List<Cargo> listaCargos) {
+		this.listaCargos = listaCargos;
+	}
+	
 }

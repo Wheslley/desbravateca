@@ -63,17 +63,15 @@ public class Login {
 	
 	public String getCredencial() {
 
-//		UsuarioRepository uRepository = new UsuarioRepository();
-//		
-//		if (uRepository.validateUsernamePassword(this.username, this.password)) {
-//
-//			setUsernamePermitionSession(uRepository);
-//			return "paginaInicial";
-//		}
-//		System.out.println("Error Login.getCredencial()");
-//		return "login";
+		UsuarioRepository uRepository = new UsuarioRepository();
 		
-		return "paginaInicial";
+		if (uRepository.validateUsernamePassword(this.username, this.password)) {
+
+			setUsernamePermitionSession(uRepository);
+			return "paginaInicial";
+		}
+		System.out.println("Error Login.getCredencial()");
+		return "login";
 
 	}
 

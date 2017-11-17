@@ -26,7 +26,7 @@
 			<div class="row cabecalho">
 
 				<div class="col-md-1 fotoCabecalho"
-					style="background-image: url('img/man-user.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+					style="background-image: url('icons/png/016-student.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
 				</div>
 				<div class="col-md-2">
 
@@ -40,6 +40,7 @@
 						<h:outputText value="#{sessionScope.permissao}" />
 
 					</p:panelGrid>
+					
 				</div>
 
 				<div class="col-md-4 col-md-offset-1 corpoTitulo">
@@ -48,13 +49,18 @@
 
 				<div class="col-md-3 col-md-offset-1"
 					style="padding-top: 25px; padding-bottom: 25px;">
+
 					<h:commandButton action="#{paginaInicial.getInicio}"
 						class="btn btn-default" style="width: 30%; margin-right: 5px;"
 						value="Inicio" />
+
+					<h:commandButton action="#{paginaInicial.getEventos}"
+						class="btn btn-default" style="width: 30%;  margin-right: 5px;"
+						value="Notificacoes" />
+
 					<h:commandButton action="#{paginaInicial.getSair}"
 						class="btn btn-default" style="width: 30%;" value="Sair" />
-					<h:commandButton action="#{paginaInicial.getEventos}"
-						class="btn btn-default" style="width: 30%;" value="Eventos" />
+
 				</div>
 
 			</div>
@@ -283,7 +289,7 @@
 			<!-- FOOTER -->
 
 			<div class="row rodape">
-				
+
 				<a href="https://www.facebook.com/Wheslleyy" target="_blank"> <img
 					style="height: 30px; width: 30px; float: right; margin: 10px; margin-right: 35px;"
 					src="icons/png/021-facebook.png" />

@@ -26,13 +26,13 @@
 			
 			
 				<div class="col-md-12" style="background-color: inherit; color: white; position: absolute;">
-					<div class="col-md-5" style="float: right; background-color: #7f8c8d; margin-top: 10px; border-radius: 10px; border: solid 1px;">
+					<div class="col-md-6" style="float: right; background-color: #7f8c8d; margin-top: 10px; border-radius: 10px; border: solid 1px;">
 						<h:outputLabel value="Usuario" style="margin-right: 1%;"/>
 						<h:inputText value="#{login.username}" class="form-control campoTexto" placeholder="Usuario"/>
 						<h:outputLabel value="Senha" style="margin-right: 1%; margin-left: 10px;"/>
-						<h:inputSecret value="#{login.password}" class="form-control campoTexto" placeholder="Senha" />					
-						<h:commandButton value="Logar" action="#{login.getCredencial}" class="btn btn-primary" style="margin-left: 10px; width: 22%;"/>
-						<p:commandLink value="Cadastrar" type="button" onclick="PF('cadastrarLogin').show();" style="color: white;"></p:commandLink>
+						<h:inputSecret value="#{login.password}" class="form-control campoTexto" placeholder="Senha"/>					
+						<h:commandButton value="Acessar" action="#{login.getCredencial}" class="btn btn-primary" style="margin: 5px 0 10px 10px; width: 22%;"/>
+						<p:commandLink value="Cadastrar Login" type="button" onclick="PF('cadastrarLogin').show();" style="font-size: 10px; color: white; margin-left: 15px;"></p:commandLink>
 					</div>
 				</div>
 				
