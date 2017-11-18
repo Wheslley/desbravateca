@@ -8,7 +8,7 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css"
 		href="css/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -23,7 +23,7 @@
 			<div class="row cabecalho">
 
 				<div class="col-md-1 fotoCabecalho"
-					style="background-image: url('img/man-user.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+					style="background-image: url('icons/png/016-student.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
 				</div>
 				<div class="col-md-2">
 
@@ -37,19 +37,27 @@
 						<h:outputText value="#{sessionScope.permissao}" />
 
 					</p:panelGrid>
+					
 				</div>
 
 				<div class="col-md-4 col-md-offset-1 corpoTitulo">
 					<h1 class="tituloCabecalho">DESBRAVOTECA</h1>
 				</div>
 
-				<div class="col-md-2 col-md-offset-2"
-					style="padding-top: 5px; padding-bottom: 5px;">
+				<div class="col-md-3 col-md-offset-1"
+					style="padding-top: 25px; padding-bottom: 25px;">
+
 					<h:commandButton action="#{paginaInicial.getInicio}"
-						class="btn btn-default" style="width: 45%; margin-right: 5px;"
-						value="Inicio"></h:commandButton>
+						class="btn btn-default" style="width: 30%; margin-right: 5px;"
+						value="Inicio" />
+
+					<h:commandButton action="#{paginaInicial.getEventos}"
+						class="btn btn-default" style="width: 30%;  margin-right: 5px;"
+						value="Notificacoes" />
+
 					<h:commandButton action="#{paginaInicial.getSair}"
-						class="btn btn-default" style="width: 45%;" value="Sair"></h:commandButton>
+						class="btn btn-default" style="width: 30%;" value="Sair" />
+
 				</div>
 
 			</div>
@@ -58,16 +66,18 @@
 				style="width: 80%; margin: auto; margin-top: 10px; margin-bottom: 10px; border-bottom: solid 1px #CCC;">
 				<div class="col-md-11 corpoTitulo">
 					<h:commandButton action="#{cargos.cargosCadastroVoltar}"
-						class="btn btn-default"
+						class="btn btn-primary"
 						style="float: left; width: 70px; border-radius: 50px; margin-top: 12px;"
-						value="voltar"></h:commandButton>
+						value="Voltar"></h:commandButton>
 					<h1 style="color: black; font-size: 30px; margin-top: 12px;">CARGOS
 						- LISTAR</h1>
 				</div>
 			</div>
 
 			<div class="row caixaMenu" style="min-height: 450px; width: 80%;">
-
+				
+				<h6 style="font-style: italic;" align="center">Lista dos Cargos dos Desbravadores.</h6>
+				
 				<p:dataTable var="cargo" value="#{cargos.listaCargos}"
 					widgetVar="cargosTable" emptyMessage="Nenhum cargo encontrado"
 					filteredValue="#{cargos.listaCargosFiltrados}">
@@ -76,7 +86,7 @@
 						<h:outputText value="#{cargo.id}" />
 					</p:column>
 
-					<p:column filterBy="#{cargo.descricao}" headerText="Descricao">
+					<p:column filterBy="#{cargo.descricao}" headerText="Descrição">
 						<h:outputText value="#{cargo.descricao}" />
 					</p:column>
 

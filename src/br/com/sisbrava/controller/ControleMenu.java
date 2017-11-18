@@ -100,15 +100,15 @@ public class ControleMenu {
 	}
 	
 	/**
-	 * Acesso ao Sistema
+	 * Acesso ao Evento
 	 * */
 	
 	public void evento() {
-		this.controleMenu = "evento.xhtml";
+		this.controleMenu = "eventos.xhtml";
 	}
 
 	public String eventoRetorno() {
-		return "evento.xhtml";
+		return "eventos.xhtml";
 	}
 
 }

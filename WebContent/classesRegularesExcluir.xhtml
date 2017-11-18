@@ -8,7 +8,7 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css"
 		href="css/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -21,42 +21,51 @@
 
 			<div class="row cabecalho">
 
-					<div class="col-md-1 fotoCabecalho" style=" 
-						background-image: url('img/man-user.png'); 
-						background-repeat: no-repeat;
-						background-size: contain;
-						background-position: center;">
-					</div>
-					<div class="col-md-2">
+				<div class="col-md-1 fotoCabecalho"
+					style="background-image: url('icons/png/016-student.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+				</div>
+				<div class="col-md-2">
 
-						<p:panelGrid columns="2" class="dadosUsuario">
+					<p:panelGrid columns="2" class="dadosUsuario">
 
-							<h:outputText value="Nome:" />
-						
-							<h:outputText value="#{sessionScope.usuario}" />
+						<h:outputText value="Nome:" />
 
-							<h:outputText value="Cargo:" />
-							<h:outputText value="#{sessionScope.permissao}" />
+						<h:outputText value="#{sessionScope.usuario}" />
 
-						</p:panelGrid>
-					</div>
+						<h:outputText value="Cargo:" />
+						<h:outputText value="#{sessionScope.permissao}" />
 
-					<div class="col-md-4 col-md-offset-1 corpoTitulo">
-						<h1 class="tituloCabecalho">DESBRAVOTECA</h1>
-					</div>
+					</p:panelGrid>
+					
+				</div>
 
-					<div class="col-md-2 col-md-offset-2" style="padding-top: 5px; padding-bottom: 5px;">
-						<h:commandButton action="#{paginaInicial.getInicio}" class="btn btn-default" style="width: 45%; margin-right: 5px;" value="Inicio"></h:commandButton>
-						<h:commandButton action="#{paginaInicial.getSair}" class="btn btn-default" style="width: 45%;" value="Sair"></h:commandButton>
-					</div>
+				<div class="col-md-4 col-md-offset-1 corpoTitulo">
+					<h1 class="tituloCabecalho">DESBRAVOTECA</h1>
+				</div>
+
+				<div class="col-md-3 col-md-offset-1"
+					style="padding-top: 25px; padding-bottom: 25px;">
+
+					<h:commandButton action="#{paginaInicial.getInicio}"
+						class="btn btn-default" style="width: 30%; margin-right: 5px;"
+						value="Inicio" />
+
+					<h:commandButton action="#{paginaInicial.getEventos}"
+						class="btn btn-default" style="width: 30%;  margin-right: 5px;"
+						value="Notificacoes" />
+
+					<h:commandButton action="#{paginaInicial.getSair}"
+						class="btn btn-default" style="width: 30%;" value="Sair" />
+
+				</div>
 
 			</div>
 			
-			<div class="row" style="width: 70%; margin: auto; margin-top: 10px; margin-bottom: 10px; border-bottom: solid 1px #CCC;">
+			<div class="row" style="width: 80%; margin: auto; margin-top: 10px; margin-bottom: 10px; border-bottom: solid 1px #CCC;">
 				<div class="col-md-11 corpoTitulo">
-					<h:commandButton action="#{cargos.cargosCadastroVoltar}" class="btn btn-default" 
-						style="float: left; width: 70px; border-radius: 50px; margin-top: 12px;" value="voltar"></h:commandButton>
-					<h1 style="color: black; font-size: 30px; margin-top: 12px;">CLASSES REGULARES - EXCLUIR</h1>
+					<h:commandButton action="#{classeRegular.classeRegularCadastroVoltar}" class="btn btn-primary" 
+						style="float: left; width: 70px; border-radius: 50px; margin-top: 12px;" value="Voltar"></h:commandButton>
+					<h1 style="color: black; font-size: 30px; margin-top: 12px;">CLASSES - EXCLUIR</h1>
 				</div>
 			</div>
 			
@@ -66,19 +75,28 @@
 					<h:outputLabel value="ID" style="margin-right: 1%; float: right; padding-top: 6px;" />
 				</div>
 				<div class="col-md-9">
-					<p:inputText value="#{cargos.descricao}"  class="form-control" placeholder="id"></p:inputText>
+					<p:inputText value="#{classeRegular.id}"  class="form-control"></p:inputText>
 				</div>
 				<div class="col-md-1">
-					<h:commandButton value="Buscar" action="#{cargos.getCadastroCargos}" 
+					<h:commandButton value="Buscar" action="#{classeRegular.buscarID}" 
 						class="btn btn-primary" style="width: 100px;"/>
 				</div>
 				
 				<div class="col-md-12" style="margin-top: 10px;border-bottom: solid 1px #ccc; margin-bottom: 20px;"></div>
 				
 				<div class="col-md-12">
-					<h:outputLabel value="Descricao" style="margin-right: 1%;"/>
-					<p:inputText value="#{cargos.descricao}"  class="form-control" placeholder="descricao"></p:inputText>
-					<h:commandButton value="Alterar" action="#{cargos.getCadastroCargos}" class="btn btn-primary" style="margin-top: 10px; margin-left: calc(50% - 50px); width: 100px;"/>
+				
+					<div>
+						<h:outputLabel value="Descrição" style="margin-right: 1%;"/>
+						<p:inputText value="#{classeRegular.descricao}" disabled="true" class="form-control"></p:inputText>
+						<h:outputLabel value="Idade Permitida" style="margin-right: 1%;"/>
+						<p:inputText value="#{classeRegular.idadePermitida}" disabled="true" class="form-control"></p:inputText>
+					</div>
+					
+					<div style="margin-top: 30px;">
+						<h:commandButton value="Excluir" action="#{classeRegular.getExcluirClasses}" 
+							class="btn btn-primary" style="margin-top: 10px; margin-left: calc(50% - 50px); width: 100px;"/>
+					</div>
 				</div>
 				
 			</div>

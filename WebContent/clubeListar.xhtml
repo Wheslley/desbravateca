@@ -21,73 +21,79 @@
 
 			<div class="row cabecalho">
 
-					<div class="col-md-1 fotoCabecalho" style=" 
-						background-image: url('img/man-user.png'); 
-						background-repeat: no-repeat;
-						background-size: contain;
-						background-position: center;">
-					</div>
-					<div class="col-md-2">
+				<div class="col-md-1 fotoCabecalho"
+					style="background-image: url('icons/png/016-student.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+				</div>
+				<div class="col-md-2">
 
-						<p:panelGrid columns="2" class="dadosUsuario">
+					<p:panelGrid columns="2" class="dadosUsuario">
 
-							<h:outputText value="Nome:" />
-						
-							<h:outputText value="#{sessionScope.usuario}" />
+						<h:outputText value="Nome:" />
 
-							<h:outputText value="Cargo:" />
-							<h:outputText value="#{sessionScope.permissao}" />
+						<h:outputText value="#{sessionScope.usuario}" />
 
-						</p:panelGrid>
-					</div>
+						<h:outputText value="Cargo:" />
+						<h:outputText value="#{sessionScope.permissao}" />
 
-					<div class="col-md-4 col-md-offset-1 corpoTitulo">
-						<h1 class="tituloCabecalho">DESBRAVOTECA</h1>
-					</div>
+					</p:panelGrid>
+					
+				</div>
 
-					<div class="col-md-2 col-md-offset-2" style="padding-top: 5px; padding-bottom: 5px;">
-						<h:commandButton action="#{paginaInicial.getInicio}" class="btn btn-default" style="width: 45%; margin-right: 5px;" value="Inicio"></h:commandButton>
-						<h:commandButton action="#{paginaInicial.getSair}" class="btn btn-default" style="width: 45%;" value="Sair"></h:commandButton>
-					</div>
+				<div class="col-md-4 col-md-offset-1 corpoTitulo">
+					<h1 class="tituloCabecalho">DESBRAVOTECA</h1>
+				</div>
+
+				<div class="col-md-3 col-md-offset-1"
+					style="padding-top: 25px; padding-bottom: 25px;">
+
+					<h:commandButton action="#{paginaInicial.getInicio}"
+						class="btn btn-default" style="width: 30%; margin-right: 5px;"
+						value="Inicio" />
+
+					<h:commandButton action="#{paginaInicial.getEventos}"
+						class="btn btn-default" style="width: 30%;  margin-right: 5px;"
+						value="Notificacoes" />
+
+					<h:commandButton action="#{paginaInicial.getSair}"
+						class="btn btn-default" style="width: 30%;" value="Sair" />
+
+				</div>
 
 			</div>
 			
 			<div class="row" style="width: 70%; margin: auto; margin-top: 10px; margin-bottom: 10px; border-bottom: solid 1px #CCC;">
 				<div class="col-md-11 corpoTitulo">
-					<h:commandButton action="#{clubes.clubeCadastroVoltar}" class="btn btn-default" 
-						style="float: left; width: 70px; border-radius: 50px; margin-top: 12px;" value="voltar"></h:commandButton>
+					<h:commandButton action="#{clubes.clubeVoltar}" class="btn btn-primary" 
+						style="float: left; width: 70px; border-radius: 50px; margin-top: 12px;" value="Voltar"></h:commandButton>
 					<h1 style="color: black; font-size: 30px; margin-top: 12px;">CLUBE - LISTAR</h1>
 				</div>
 			</div>
 			
 			<div class="row caixaMenu" style="min-height: 450px; width: 70%;"  >
 				
-				<h:dataTable id="tabelaClubes" value="#{clubes.listaClube}" var="clube" styleClass="tabela" headerClass="cabecalhoTabela" columnClasses="ultimo,primeiro,ultimo,primeiro">
-					<h:column >
-						<f:facet name="header">
-							<h:outputText value="ID" ></h:outputText>
-						</f:facet>
-						<h:outputText value="#{clube.id}"></h:outputText>
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="DESCRICAO"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{clube.descricao}"></h:outputText>
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="REGIAO"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{clube.regiao}"></h:outputText>
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="CEP"></h:outputText>
-						</f:facet>
-						<h:outputText value="#{clube.cep}"></h:outputText>
-					</h:column>
-				</h:dataTable>
+				<h6 style="font-style: italic;" align="center">Lista dos Clubes de Desbravadores.</h6>
+				
+				<p:dataTable var="clube" value="#{clubes.listaClube}"
+					widgetVar="clubeTable" emptyMessage="Nenhum clube encontrado"
+					filteredValue="#{clubes.listaClubesFiltrados}">
+
+					<p:column filterBy="#{clube.id}" headerText="Id">
+						<h:outputText value="#{clube.id}" />
+					</p:column>
+
+					<p:column filterBy="#{clube.descricao}" headerText="Descricao">
+						<h:outputText value="#{clube.descricao}" />
+					</p:column>
+					
+<!-- 					<p:column filterBy="#{clube.regiao}" headerText="Regiao"> -->
+<!-- 						<h:outputText value="#{clube.regiao}" /> -->
+<!-- 					</p:column> -->
+					
+					<p:column filterBy="#{clube.cep}" headerText="Cep">
+						<h:outputText value="#{clube.cep}" />
+					</p:column>
+
+				</p:dataTable>
 				
 			</div>
 

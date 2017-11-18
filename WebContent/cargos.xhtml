@@ -8,7 +8,7 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css"
 		href="css/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -21,34 +21,43 @@
 
 			<div class="row cabecalho">
 
-					<div class="col-md-1 fotoCabecalho" style=" 
-						background-image: url('img/man-user.png'); 
-						background-repeat: no-repeat;
-						background-size: contain;
-						background-position: center;">
-					</div>
-					<div class="col-md-2">
+				<div class="col-md-1 fotoCabecalho"
+					style="background-image: url('icons/png/016-student.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+				</div>
+				<div class="col-md-2">
 
-						<p:panelGrid columns="2" class="dadosUsuario">
+					<p:panelGrid columns="2" class="dadosUsuario">
 
-							<h:outputText value="Nome:" />
-						
-							<h:outputText value="#{sessionScope.usuario}" />
+						<h:outputText value="Nome:" />
 
-							<h:outputText value="Cargo:" />
-							<h:outputText value="#{sessionScope.permissao}" />
+						<h:outputText value="#{sessionScope.usuario}" />
 
-						</p:panelGrid>
-					</div>
+						<h:outputText value="Cargo:" />
+						<h:outputText value="#{sessionScope.permissao}" />
 
-					<div class="col-md-4 col-md-offset-1 corpoTitulo">
-						<h1 class="tituloCabecalho">DESBRAVOTECA</h1>
-					</div>
+					</p:panelGrid>
+					
+				</div>
 
-					<div class="col-md-2 col-md-offset-2" style="padding-top: 5px; padding-bottom: 5px;">
-						<h:commandButton action="#{paginaInicial.getInicio}" class="btn btn-default" style="width: 45%; margin-right: 5px;" value="Inicio"></h:commandButton>
-						<h:commandButton action="#{paginaInicial.getSair}" class="btn btn-default" style="width: 45%;" value="Sair"></h:commandButton>
-					</div>
+				<div class="col-md-4 col-md-offset-1 corpoTitulo">
+					<h1 class="tituloCabecalho">DESBRAVOTECA</h1>
+				</div>
+
+				<div class="col-md-3 col-md-offset-1"
+					style="padding-top: 25px; padding-bottom: 25px;">
+
+					<h:commandButton action="#{paginaInicial.getInicio}"
+						class="btn btn-default" style="width: 30%; margin-right: 5px;"
+						value="Inicio" />
+
+					<h:commandButton action="#{paginaInicial.getEventos}"
+						class="btn btn-default" style="width: 30%;  margin-right: 5px;"
+						value="Notificacoes" />
+
+					<h:commandButton action="#{paginaInicial.getSair}"
+						class="btn btn-default" style="width: 30%;" value="Sair" />
+
+				</div>
 
 			</div>
 			
@@ -74,7 +83,7 @@
 								
 							</div>
 							<div class="detalhesNovoMenu ">
-								<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para cadastrar um novo cargo.</p>
+								<p style="margin-left: 5%; margin-right: 5%;">Cadastro de novo cargo.</p>
 							</div>
 						</div>
 					</div>
@@ -95,7 +104,7 @@
 								
 							</div>
 							<div class="detalhesNovoMenu ">
-								<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para listar todos os cargos cadastrados.</p>
+								<p style="margin-left: 5%; margin-right: 5%;">Listagem de cargos.</p>
 							</div>
 						</div>
 					</div>
@@ -116,7 +125,7 @@
 							
 						</div>
 						<div class="detalhesNovoMenu ">
-							<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para alterar um cargo.</p>
+							<p style="margin-left: 5%; margin-right: 5%;">Alterações de cargos.</p>
 						</div>
 					</div>
 				</div>
@@ -137,11 +146,11 @@
 							
 						</div>
 						<div class="detalhesNovoMenu ">
-							<p style="margin-left: 5%; margin-right: 5%;">Entre aqui para excluir determinado cargo.</p>
+							<p style="margin-left: 5%; margin-right: 5%;">Exclusão de cargo.</p>
 						</div>
 					</div>
 				</div>
-				
+								
 				
 			</div>
 			

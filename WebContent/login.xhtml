@@ -28,11 +28,11 @@
 				<div class="col-md-12" style="background-color: inherit; color: white; position: absolute;">
 					<div class="col-md-6" style="float: right; background-color: #7f8c8d; margin-top: 10px; border-radius: 10px; border: solid 1px;">
 						<h:outputLabel value="Usuario" style="margin-right: 1%;"/>
-						<h:inputText value="#{login.username}" class="form-control campoTexto" placeholder="Usuario"/>
+						<h:inputText value="#{login.email}" class="form-control campoTexto" placeholder="Usuario"/>
 						<h:outputLabel value="Senha" style="margin-right: 1%; margin-left: 10px;"/>
 						<h:inputSecret value="#{login.password}" class="form-control campoTexto" placeholder="Senha"/>					
 						<h:commandButton value="Acessar" action="#{login.getCredencial}" class="btn btn-primary" style="margin: 5px 0 10px 10px; width: 22%;"/>
-						<p:commandLink value="Cadastrar Login" type="button" onclick="PF('cadastrarLogin').show();" style="font-size: 10px; color: white; margin-left: 15px;"></p:commandLink>
+						<p:commandLink value="Cadastrar" type="button" onclick="PF('cadastrarLogin').show();" style="font-size: 10px; color: white; margin-left: 15px;"></p:commandLink>
 					</div>
 				</div>
 				
@@ -40,12 +40,26 @@
 					<p:dialog header="Cadastrar Login" widgetVar="cadastrarLogin" modal="true" class="modalCadastroLogin" 
 					style="height: 300px;">
 					    <h:outputLabel value="E-mail" style="margin-right: 1%;"/>
-						<p:inputText value="#{login.email}" class="form-control" placeholder="email"></p:inputText>
-						<h:outputLabel value="Usuario" style="margin-right: 1%;"/>
-						<p:inputText value="#{login.usernameCadastro}" class="form-control" placeholder="usuario"></p:inputText>
-						<h:outputLabel value="Senha" style="margin-right: 1%;"/>
-						<p:password value="#{login.passwordCadastro}" class="form-control" placeholder="senha"></p:password>
-						<h:commandButton value="Cadastrar" action="#{login.getCadastroLogin}" class="btn btn-primary" style="margin-top: 10px; margin-left: calc(50% - 50px); width: 100px;"/>
+						<p:inputText value="#{login.emailCadastro}" class="form-control" placeholder="email" style="width: 400px;"></p:inputText>
+						
+						<h:outputLabel value="Nome" style="margin-right: 1%;"/>
+						<p:inputText value="#{login.nome}" class="form-control" placeholder="usuario"></p:inputText>
+						
+						<h:outputLabel value="Idade" style="margin-right: 1%;"/>
+						<p:inputText value="#{login.idade}" class="form-control" placeholder="usuario"></p:inputText>
+						
+						<h:outputLabel value="RG" style="margin-right: 1%;"/>
+						<p:inputText value="#{login.rg}" class="form-control" placeholder="usuario"></p:inputText>
+						
+						<h:outputLabel value="CPF" style="margin-right: 1%;"/>
+						<p:inputText value="#{login.cpf}" class="form-control" placeholder="usuario"></p:inputText>
+						
+						<h:selectOneMenu value="teste"> 
+			                <f:selectItems itemValue = "#{login.listaPermissoes}" /> 
+			            </h:selectOneMenu> 
+						
+						<h:commandButton value="Cadastrar" action="#{login.getCadastroLogin}" 
+							class="btn btn-primary" style="margin-top: 10px; margin-left: calc(50% - 50px); width: 100px;"/>
 					</p:dialog>
 				</h:form>
 				
