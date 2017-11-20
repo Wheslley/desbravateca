@@ -55,7 +55,6 @@ public class Login {
 		}
 	}
 
-	@SuppressWarnings("finally")
 	public String getCredencial() {
 
 		try {
@@ -69,10 +68,9 @@ public class Login {
 
 		} catch (Exception ex) {
 			System.out.println(ex.getClass() + " [Message] " + ex.getMessage());
-		} finally {
-			return "login";
-		}
-
+		} 
+		
+		return "login";
 	}
 
 	public void setUsernamePermitionSession(UsuarioRepository uRepository) {
@@ -87,6 +85,8 @@ public class Login {
 
 			Usuario usuario = (Usuario) uRepository.getUsuarioUsername(this.email);
 			session.setAttribute("permissao", usuario.getPermissao().getDescricao());
+			
+			session.setAttribute("usuarioObject", usuario);
 
 		} catch (Exception ex) {
 			System.out.println(ex.getClass() + " [Message] " + ex.getMessage());

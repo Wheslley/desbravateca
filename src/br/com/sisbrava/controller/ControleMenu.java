@@ -110,5 +110,17 @@ public class ControleMenu {
 	public String eventoRetorno() {
 		return "eventos.xhtml";
 	}
+	
+	/**
+	 * Classes
+	 * */
+	
+	public void classes() {
+		this.controleMenu = "classes.xhtml";
+	}
 
+	public String classesRetorno() {
+		return "classes.xhtml";
+	}
+	
 }

@@ -2,7 +2,9 @@ package br.com.sisbrava.managebean;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.faces.bean.ManagedBean;
+
 import br.com.sisbrava.bean.Classes;
 import br.com.sisbrava.interfaces.mensagem.ITables;
 import br.com.sisbrava.repository.ClassesRepository;
@@ -15,10 +17,10 @@ public class ClasseRegular {
 	private String idadePermitida;
 	private List<Classes> listaClasses;
 	private List<Classes> listaClassesFiltrados;
-
+	
 	public List<Classes> getListaClasses() {
 
-		listaClasses = new ArrayList<Classes>();
+		this.listaClasses = new ArrayList<Classes>();
 		ClassesRepository cRepository = new ClassesRepository();
 
 		List<Object> lista = cRepository.selectMultiplusObjects(ITables.CLASSES);
@@ -26,10 +28,10 @@ public class ClasseRegular {
 		for (Object o : lista) {
 			Classes classes = new Classes();
 			classes = (Classes) o;
-			listaClasses.add(classes);
+			this.listaClasses.add(classes);
 		}
 
-		return listaClasses;
+		return this.listaClasses;
 	}
 
 	@SuppressWarnings("finally")
@@ -94,9 +96,9 @@ public class ClasseRegular {
 
 	@SuppressWarnings("finally")
 	public String getExcluirClasses() {
-		
+
 		try {
-			
+
 			ClassesRepository cRepository = new ClassesRepository();
 			Classes classes = new Classes();
 			Integer id;
@@ -104,14 +106,14 @@ public class ClasseRegular {
 
 			classes = (Classes) cRepository.getSelectOneObject(id);
 			cRepository.delete(classes);
-			
+
 		} catch (Exception ex) {
 			System.out.println(ex.getCause() + " [Message] " + ex.getMessage());
 		} finally {
 			return "classesRegulares.xhtml";
 		}
 	}
-	
+
 	public String getId() {
 		return id;
 	}
@@ -147,7 +149,7 @@ public class ClasseRegular {
 	public void setListaClasses(List<Classes> listaClasses) {
 		this.listaClasses = listaClasses;
 	}
-	
+
 	public String classeRegularCadastroRetorno() {
 		return "classesRegularesCadastro.xhtml";
 	}
@@ -167,5 +169,8 @@ public class ClasseRegular {
 	public String classeRegularCadastroVoltar() {
 		return "classesRegulares.xhtml";
 	}
-
+	
+	public String classeRegularGerenciamento() {
+		return "classesRegularesGerenciamento.xhtml";
+	}
 }
