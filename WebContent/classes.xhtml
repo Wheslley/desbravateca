@@ -76,8 +76,28 @@
 				
 				<div class="col-md-12">
 							
-		          	<h:outputLabel value="Usuário" style="margin-right: 1%;"/>
-					<p:inputText value="a"  class="form-control"/>
+		          	<p:dataTable style="margin: 20px 0 0 0" var="classes"
+						value="#{classe.listaClasse}" widgetVar="classeTable"
+						emptyMessage="Nenhuma classe encontrada"
+						filteredValue="#{classe.listaClasseFiltrado}">
+
+					<p:column filterBy="#{classes.classe.id}" headerText="ID Classe">
+						<h:outputText value="#{classes.classe.id}" />
+					</p:column>
+					
+					<p:column filterBy="#{classes.classe.descricao}" headerText="Descrição">
+						<h:outputText value="#{classes.classe.descricao}" />
+					</p:column>
+					
+					<p:column filterBy="#{classes.classe.idade_permitida}" headerText="Idade Permitida">
+						<h:outputText value="#{classes.classe.idade_permitida}" />
+					</p:column>
+					
+					<p:column filterBy="#{classes.nota}" headerText="Nota">
+						<h:outputText value="#{classes.nota}" />
+					</p:column>
+					
+				</p:dataTable>
 					
 				</div>
 				

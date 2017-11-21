@@ -166,6 +166,10 @@ public class ClasseRegular {
 		return "classesRegularesExcluir.xhtml";
 	}
 
+	public String classeRegularAssociarClasseRetorno() {
+		return "classeRegularAssociarClasseRetorno.xhtml";
+	}
+
 	public String classeRegularCadastroVoltar() {
 		return "classesRegulares.xhtml";
 	}
@@ -173,4 +177,5 @@ public class ClasseRegular {
 	public String classeRegularGerenciamento() {
 		return "classesRegularesGerenciamento.xhtml";
 	}
+	
 }

@@ -69,7 +69,7 @@
 			
 
 					<div  class="col-md-3" style="margin-top: 2%; padding: 0px;" >
-						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
+						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%; background-color: #CFF7FF;">
 							<div class="cabecalhoNovoMenu ">
 								<p class="tituloNovoMenu">Cadastrar</p>
 								<p:commandLink class="botaoExibir" value="exibir" action="#{classeRegular.classeRegularCadastroRetorno}"></p:commandLink>
@@ -90,7 +90,7 @@
 
 				
 					<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
-						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
+						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%; background-color: #CFF7FF;">
 							<div class="cabecalhoNovoMenu ">
 								<p class="tituloNovoMenu">Listar</p>
 								<p:commandLink class="botaoExibir" value="exibir" action="#{classeRegular.classeRegularListarRetorno}"></p:commandLink>
@@ -111,7 +111,7 @@
 				
 				
 				<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
-					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
+					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%; background-color: #CFF7FF;">
 						<div class="cabecalhoNovoMenu ">
 							<p class="tituloNovoMenu">Alterar</p>
 							<p:commandLink class="botaoExibir" value="exibir" action="#{classeRegular.classeRegularAlterarRetorno}"></p:commandLink>
@@ -132,7 +132,7 @@
 				
 				
 				<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
-					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
+					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%; background-color: #CFF7FF;">
 						<div class="cabecalhoNovoMenu ">
 							<p class="tituloNovoMenu">Excluir</p>
 							<p:commandLink class="botaoExibir" value="exibir" action="#{classeRegular.classeRegularExcluirRetorno}"></p:commandLink>
@@ -149,7 +149,27 @@
 							<p style="margin-left: 5%; margin-right: 5%;">Exclusão de classe.</p>
 						</div>
 					</div>
-				</div>				
+				</div>	
+				
+				<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
+					<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
+						<div class="cabecalhoNovoMenu ">
+							<p class="tituloNovoMenu">Associar Classe</p>
+							<p:commandLink class="botaoExibir" value="exibir" action="#{classeRegular.classeRegularAssociarClasseRetorno}"></p:commandLink>
+						</div>
+						<div class="corpoNovoMenu">
+							
+							<p:commandLink class="botao" action="#{classeRegular.classeRegularAssociarClasseRetorno}">
+								<p:graphicImage class="imagemCargos" value="icons/png/crud/associar.png">
+								</p:graphicImage>
+							</p:commandLink>
+							
+						</div>
+						<div class="detalhesNovoMenu ">
+							<p style="margin-left: 5%; margin-right: 5%;">Associação de Classes para usuários do sistema.</p>
+						</div>
+					</div>
+				</div>					
 				
 			</div>
 			
