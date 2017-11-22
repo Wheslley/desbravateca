@@ -24,15 +24,16 @@ public class Classe {
 
 	@PostConstruct
 	public void init() {
-
+		
+		PessoaPossuiClasseRepository ppcRepository = new PessoaPossuiClasseRepository();
+		
 		FacesContext fc = FacesContext.getCurrentInstance();
 		ExternalContext ec = fc.getExternalContext();
 
 		HttpSession session = (HttpSession) ec.getSession(false);
 		Usuario usuario = (Usuario) session.getAttribute("usuarioObject");
 
-		List<Object> listaObjects = (List<Object>) PessoaPossuiClasseRepository.getInstance()
-				.selectMultiplusObjects(ITables.PESSOA_POSSUI_CLASSE);
+		List<Object> listaObjects = (List<Object>) ppcRepository.selectMultiplusObjects(ITables.PESSOA_POSSUI_CLASSE);
 
 		for (Object o : listaObjects) {
 			PessoaPossuiClasse ppclasse = (PessoaPossuiClasse) o;
@@ -41,7 +42,6 @@ public class Classe {
 				classeNota.setClasse(ppclasse.getClasse());
 				classeNota.setNota(ppclasse.getNota());
 				this.listaClasse.add(classeNota);
-				System.out.println(ppclasse.toString());
 			}
 		}
 

@@ -123,4 +123,16 @@ public class ControleMenu {
 		return "classes.xhtml";
 	}
 	
+	/**
+	 * Especialidade
+	 * */
+	
+	public void especialidade() {
+		this.controleMenu = "especialidade.xhtml";
+	}
+
+	public String especialidadeRetorno() {
+		return "especialidade.xhtml";
+	}
+	
 }
