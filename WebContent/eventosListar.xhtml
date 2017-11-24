@@ -66,7 +66,7 @@
 				style="width: 80%; margin: auto; margin-top: 10px; margin-bottom: 10px; border-bottom: solid 1px #CCC;">
 				<div class="col-md-11 corpoTitulo">
 					<h:commandButton action="#{eventos.eventosCadastroVoltar}"
-						class="btn btn-default"
+						class="btn btn-primary"
 						style="float: left; width: 70px; border-radius: 50px; margin-top: 12px;"
 						value="voltar"></h:commandButton>
 					<h1 style="color: black; font-size: 30px; margin-top: 12px;">EVENTOS
@@ -90,10 +90,6 @@
 					
 					<p:column filterBy="#{evento.taxa}" headerText="Taxa">
 						<h:outputText value="#{evento.taxa}" />
-					</p:column>
-					
-					<p:column filterBy="#{evento.tipoEvento}" headerText="Tipo Evento">
-						<h:outputText value="#{evento.tipoEvento}" />
 					</p:column>
 
 				</p:dataTable>

@@ -199,7 +199,7 @@
 
 					<!-- COORDENADORIA -->
 					
-					<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
+					<div class="col-md-3" style="margin-top: 2%; padding: 0px; display: none;">
 						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%; background-color: #CFF7FF;">
 							<div class="cabecalhoNovoMenu ">
 								<p class="tituloNovoMenu">Coordenadoria</p>
@@ -220,8 +220,7 @@
 							</div>
 						</div>
 					</div>
-
-
+					
 					<!-- EVENTOS -->
 
 					<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
@@ -242,6 +241,30 @@
 							</div>
 							<div class="detalhesNovoMenu ">
 								<p style="margin-left: 5%; margin-right: 5%;">Gerenciamento	de eventos.</p>
+							</div>
+						</div>
+					</div>
+					
+					<!-- ESPECIALIDADES -->
+
+					<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
+						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
+							<div class="cabecalhoNovoMenu ">
+								<p class="tituloNovoMenu">ESPECIALIDADES</p>
+								<p:commandLink class="botaoExibir" value="exibir"
+									action="#{logic.especialidadeRetorno}"></p:commandLink>
+							</div>
+							<div class="corpoNovoMenu">
+
+								<p:commandLink class="botao" action="#{logic.especialidadeRetorno}">
+									<p:graphicImage class="imagemCargos"
+										value="icons/png/003-biology.png">
+									</p:graphicImage>
+								</p:commandLink>
+
+							</div>
+							<div class="detalhesNovoMenu ">
+								<p style="margin-left: 5%; margin-right: 5%;">Gerenciamento de Clubes.</p>
 							</div>
 						</div>
 					</div>
@@ -288,30 +311,6 @@
 								<p:commandLink class="botao" action="#{logic.classesRetorno}">
 									<p:graphicImage class="imagemCargos"
 										value="icons/png/018-books.png">
-									</p:graphicImage>
-								</p:commandLink>
-
-							</div>
-							<div class="detalhesNovoMenu ">
-								<p style="margin-left: 5%; margin-right: 5%;">Gerenciamento de Clubes.</p>
-							</div>
-						</div>
-					</div>
-					
-					<!-- ESPECIALIDADES -->
-
-					<div class="col-md-3" style="margin-top: 2%; padding: 0px;">
-						<div class="btnNovoMenu" style="width: 90%; margin-left: 5%;">
-							<div class="cabecalhoNovoMenu ">
-								<p class="tituloNovoMenu">ESPECIALIDADES</p>
-								<p:commandLink class="botaoExibir" value="exibir"
-									action="#{logic.especialidadeRetorno}"></p:commandLink>
-							</div>
-							<div class="corpoNovoMenu">
-
-								<p:commandLink class="botao" action="#{logic.especialidadeRetorno}">
-									<p:graphicImage class="imagemCargos"
-										value="icons/png/003-biology.png">
 									</p:graphicImage>
 								</p:commandLink>
 

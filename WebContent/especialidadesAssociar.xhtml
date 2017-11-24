@@ -65,37 +65,122 @@
 				<div class="col-md-11 corpoTitulo">
 					<h:commandButton action="#{especialidadeBean.especialidadeCadastroVoltar}" class="btn btn-primary" 
 						style="float: left; width: 70px; border-radius: 50px; margin-top: 12px;" value="Voltar"></h:commandButton>
-					<h1 style="color: black; font-size: 30px; margin-top: 12px;">ESPECIALIDADES - ALTERAR</h1>
+					<h1 style="color: black; font-size: 30px; margin-top: 12px;">ESPECIALIDADES - ASSOCIAR</h1>
 				</div>
 			</div>
 			
 			<div class="row caixaMenu" style="min-height: 450px; width: 80%;" >
 				
-				<h6 style="font-style: italic;" align="center">Favor digitar o identificador da Especialidade que deseja Editar.</h6>
+				<h6 style="font-style: italic;" align="center">Associe as Especialidades aos seus usuários.</h6>
 				
-				<div class="col-md-1">
-					<h:outputLabel value="ID" style="margin-right: 1%; float: right; padding-top: 6px;" />
-				</div>
-				<div class="col-md-9">
-					<p:inputText value="#{especialidadeBean.id}"  class="form-control"></p:inputText>
-				</div>
-				<div class="col-md-1">
-					<h:commandButton value="Buscar" action="#{especialidadeBean.buscarID}" 
-						class="btn btn-primary" style="width: 100px;"/>
+				<div class="col-md-2" style="margin-top: 10px">
+					<h:outputLabel value="ID Pessoa" style="margin-right: 1%;" />
 				</div>
 				
-				<div class="col-md-12" style="margin-top: 10px;border-bottom: solid 1px #ccc; margin-bottom: 20px;"></div>
-				
-				<div class="col-md-12">
-									
-					<div style="margin-top: 30px;">
-						<h:outputLabel value="Descrição" style="margin-right: 1%;"/>
-						<p:inputText value="#{especialidadeBean.descricao}" class="form-control"></p:inputText>
-						<h:outputLabel value="Dificuldade" style="margin-right: 1%;"/>
-						<p:inputText value="#{especialidadeBean.dificuldade}" class="form-control"></p:inputText>
-						<h:commandButton value="Alterar" action="#{especialidadeBean.getAlterarEspecialidades}" class="btn btn-primary" style="margin-top: 10px; margin-left: calc(50% - 50px); width: 100px;"/>
-					</div>
+				<div class="col-md-2" style="margin-top: 10px">
+					<p:inputText value="#{especialidadeAssociar.identificadorPessoa}" class="form-control" />
 				</div>
+				
+				<div class="col-md-2" style="margin-top: 10px">
+					<h:outputLabel value="ID Classe"	style="margin-right: 1%;" />
+				</div>
+				
+				<div class="col-md-2" style="margin-top: 10px">
+					<p:inputText value="#{especialidadeAssociar.identificadorEspecialidade}" class="form-control" />
+				</div>
+				
+				<div class="col-md-2" style="margin-top: 10px">
+					<h:outputLabel value="Nota Obtida" style="margin-right: 1%;" />
+				</div>
+				
+				<div class="col-md-2" style="margin-top: 10px">
+					<p:inputText value="#{especialidadeAssociar.nota}" class="form-control" />
+				</div>
+				
+				<p:accordionPanel style="margin-top: 70px;" multiple="true">
+				
+					<p:tab title="Identificadores Pessoa e Especialidade">
+					
+						<h:panelGrid columns="1" cellpadding="10">
+						
+							<p:dataTable style="margin: 20px 0 0 0" var="pespe"
+								value="#{especialidadeAssociar.listaPessoaPossuiEspec}"
+								widgetVar="pclasseTable"
+								emptyMessage="Nenhuma associação encontrada"
+								filteredValue="#{especialidadeAssociar.listaPessoaPossuiEspecFiltrados}">
+
+								<p:column filterBy="#{pespe.id}" headerText="ID Associação">
+									<h:outputText value="#{pespe.id}" />
+								</p:column>
+								
+								<p:column filterBy="#{pespe.pessoa.nome}" headerText="Nome">
+									<h:outputText value="#{pespe.pessoa.nome}" />
+								</p:column>
+								
+								<p:column filterBy="#{pespe.especialidade.descricao}" headerText="Especialidade">
+									<h:outputText value="#{pespe.especialidade.descricao}" />
+								</p:column>
+
+								<p:column filterBy="#{pespe.nota}" headerText="Nota">
+									<h:outputText value="#{pespe.nota}" />
+								</p:column>
+
+							</p:dataTable>
+
+						</h:panelGrid>
+						
+					</p:tab>
+					
+					<p:tab title="Identificadores Pessoa" multiple="true">
+					
+						<h:panelGrid columns="1" cellpadding="10">
+
+							<p:dataTable style="margin: 20px 0 0 0" var="pessoa"
+								value="#{especialidadeAssociar.listaPessoas}" widgetVar="pessoaTable"
+								emptyMessage="Nenhuma pessoa encontrada"
+								filteredValue="#{especialidadeAssociar.listaPessoasFiltrados}">
+
+								<p:column filterBy="#{pessoa.id}" headerText="ID Pessoa">
+									<h:outputText value="#{pessoa.id}" />
+								</p:column>
+
+								<p:column filterBy="#{pessoa.nome}" headerText="Nome">
+									<h:outputText value="#{pessoa.nome}" />
+								</p:column>
+
+							</p:dataTable>
+
+						</h:panelGrid>
+						
+					</p:tab>
+					
+					<p:tab title="Identificadores Especialidades" multiple="true">
+					
+						<h:panelGrid columns="1" cellpadding="10">
+
+							<p:dataTable style="margin: 20px 0 0 0" var="espec"
+								value="#{especialidadeAssociar.listaEspecialidades}" widgetVar="cepTable"
+								emptyMessage="Nenhuma especialidade encontrada"
+								filteredValue="#{especialidadeAssociar.listaEspecialidadesFiltrados}">
+
+								<p:column filterBy="#{espec.id}" headerText="ID Especialidade">
+									<h:outputText value="#{espec.id}" />
+								</p:column>
+
+								<p:column filterBy="#{espec.descricao}" headerText="Descrição">
+									<h:outputText value="#{espec.descricao}" />
+								</p:column>
+
+							</p:dataTable>
+
+						</h:panelGrid>
+						
+					</p:tab>
+					
+				</p:accordionPanel>
+				
+				<h:commandButton value="Associar" action="#{especialidadeAssociar.associarClassePessoa}"
+					class="btn btn-primary" style="margin-top: 30px; width: 100px; margin-left: calc(50% - 50px);" />
 				
 			</div>
 

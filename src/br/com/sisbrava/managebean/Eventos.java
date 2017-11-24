@@ -2,9 +2,8 @@ package br.com.sisbrava.managebean;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-
 import br.com.sisbrava.bean.Evento;
 import br.com.sisbrava.bean.TipoEvento;
 import br.com.sisbrava.repository.EventoRepository;
@@ -13,127 +12,62 @@ import br.com.sisbrava.repository.TipoEventoRepository;
 @ManagedBean(name = "eventos")
 public class Eventos {
 
-	private String id;
 	private String descricao;
-	private String taxa;
-	private String tipoEvento;
-	private List<Evento> listaEventos;
-	private List<Evento> listaEventosFiltrados;
+	private Double taxa;
+	private Integer tipoEvento;
+	private List<Evento> listaEventos = new ArrayList<>();
+	private List<Evento> listaEventosFiltrados = new ArrayList<>();
 
-	@SuppressWarnings("finally")
-	public List<Evento> getListaEventos() {
+	@PostConstruct
+	public void init() {
 
-		try {
+		EventoRepository eventoRepository = new EventoRepository();
 
-			listaEventos = new ArrayList<Evento>();
-			EventoRepository eRepository = new EventoRepository();
+		List<Object> listaObjects = (List<Object>) eventoRepository.selectMultiplusObjects("Evento");
 
-			List<Object> lista = eRepository.selectMultiplusObjects("Evento");
-
-			for (Object o : lista) {
-				Evento evento = new Evento();
-				evento = (Evento) o;
-				listaEventos.add(evento);
-			}
-
-		} catch (Exception ex) {
-			System.out.println(ex.getClass() + " [Message] " + ex.getMessage());
-		} finally {
-			return listaEventos;
+		for (Object o : listaObjects) {
+			this.listaEventos.add((Evento) o);
 		}
+
 	}
 
-	@SuppressWarnings("finally")
-	public String getCadastroEventos() {
+	public String cadastroEventos() {
 
 		try {
-
-			EventoRepository eRepository = new EventoRepository();
+			
 			Evento evento = new Evento();
-			TipoEvento tipoEvento = (TipoEvento) TipoEventoRepository.getInstance().getSelectOneObject(1);
+			evento.setDescricao(this.descricao);
+			evento.setTaxa(this.taxa);
 
-			evento.setDescricao(getDescricao());
-			evento.setTaxa(Double.parseDouble(getTaxa()));
+			TipoEventoRepository tpRepository = new TipoEventoRepository();
+			TipoEvento tipoEvento = (TipoEvento) tpRepository.getSelectOneObject(this.tipoEvento);
+
 			evento.setTevento(tipoEvento);
 
+			EventoRepository eRepository = new EventoRepository();
 			eRepository.insert(evento);
-
+			
 		} catch (Exception ex) {
-			System.out.println(ex.getClass() + " [Message] " + ex.getMessage());
-		} finally {
-			return "eventos.xhtml";
+			System.out.println(ex.getCause() + " [Message] " + ex.getMessage());
 		}
+
+		return "eventos.xhtml";
 	}
 
-	@SuppressWarnings("finally")
-	public String buscarID() {
-
-		try {
-
-			Integer id;
-			id = Integer.parseInt(this.getId());
-
-			EventoRepository eRepository = new EventoRepository();
-			Evento evento = (Evento) eRepository.getSelectOneObject(id);
-
-			this.setDescricao(evento.getDescricao());
-			this.setTaxa(evento.getTaxa().toString());
-			this.setTipoEvento(evento.getTevento().toString());
-
-		} catch (Exception ex) {
-			System.out.println(ex.getClass() + " [Message] " + ex.getMessage());
-		} finally {
-			return "";
-		}
+	public List<Evento> getListaEventos() {
+		return listaEventos;
 	}
 
-	@SuppressWarnings("finally")
-	public String getAlterarEventos() {
-
-		try {
-
-			EventoRepository eRepository = new EventoRepository();
-			Evento evento = (Evento) eRepository.getSelectOneObject(Integer.parseInt(this.getId()));
-			evento.setDescricao(this.getDescricao());
-			evento.setTaxa(Double.parseDouble(this.getTaxa()));
-
-			TipoEvento tipoEvento = (TipoEvento) TipoEventoRepository.getInstance().getSelectOneObject(1);
-			evento.setTevento(tipoEvento);
-
-			eRepository.update(evento);
-
-		} catch (Exception ex) {
-			System.out.println(ex.getClass() + " [Message] " + ex.getMessage());
-		} finally {
-			return "eventos.xhtml";
-		}
+	public void setListaEventos(List<Evento> listaEventos) {
+		this.listaEventos = listaEventos;
 	}
 
-	@SuppressWarnings("finally")
-	public String getExcluirEventos() {
-
-		try {
-
-			EventoRepository eRepository = new EventoRepository();
-			Evento evento = new Evento();
-
-			evento = (Evento) eRepository.getSelectOneObject(Integer.parseInt(this.getId()));
-
-			eRepository.delete(evento);
-
-		} catch (Exception ex) {
-			System.out.println(ex.getClass() + " [Message] " + ex.getMessage());
-		} finally {
-			return "eventos.xhtml";
-		}
+	public List<Evento> getListaEventosFiltrados() {
+		return listaEventosFiltrados;
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
+	public void setListaEventosFiltrados(List<Evento> listaEventosFiltrados) {
+		this.listaEventosFiltrados = listaEventosFiltrados;
 	}
 
 	public String getDescricao() {
@@ -142,6 +76,22 @@ public class Eventos {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public Double getTaxa() {
+		return taxa;
+	}
+
+	public void setTaxa(Double taxa) {
+		this.taxa = taxa;
+	}
+
+	public Integer getTipoEvento() {
+		return tipoEvento;
+	}
+
+	public void setTipoEvento(Integer tipoEvento) {
+		this.tipoEvento = tipoEvento;
 	}
 
 	public String eventosCadastroRetorno() {
@@ -162,34 +112,6 @@ public class Eventos {
 
 	public String eventosCadastroVoltar() {
 		return "eventos.xhtml";
-	}
-
-	public String getTaxa() {
-		return taxa;
-	}
-
-	public void setTaxa(String taxa) {
-		this.taxa = taxa;
-	}
-
-	public String getTipoEvento() {
-		return tipoEvento;
-	}
-
-	public void setTipoEvento(String tipoEvento) {
-		this.tipoEvento = tipoEvento;
-	}
-
-	public List<Evento> getListaEventosFiltrados() {
-		return listaEventosFiltrados;
-	}
-
-	public void setListaEventosFiltrados(List<Evento> listaEventosFiltrados) {
-		this.listaEventosFiltrados = listaEventosFiltrados;
-	}
-
-	public void setListaEventos(List<Evento> listaEventos) {
-		this.listaEventos = listaEventos;
 	}
 
 }
