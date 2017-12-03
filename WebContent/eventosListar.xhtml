@@ -83,7 +83,11 @@
 					<p:column filterBy="#{evento.id}" headerText="Id">
 						<h:outputText value="#{evento.id}" />
 					</p:column>
-
+					
+					<p:column filterBy="#{evento.tevento.descricao}" headerText="Tipo">
+						<h:outputText value="#{evento.tevento.descricao}" />
+					</p:column>
+					
 					<p:column filterBy="#{evento.descricao}" headerText="Descricao">
 						<h:outputText value="#{evento.descricao}" />
 					</p:column>

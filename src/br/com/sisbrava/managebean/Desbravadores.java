@@ -29,6 +29,7 @@ public class Desbravadores {
 	private List<Pessoa> listaDesbravadores;
 	private List<Pessoa> listaDesbravadoresFiltrados;
 	private List<Permissoes> listaPermissoes;
+	private String tipoPessoa;
 	
 	@SuppressWarnings("finally")
 	public String buscarID() {
@@ -50,6 +51,14 @@ public class Desbravadores {
 		} finally {
 			return "";
 		}
+	}
+
+	public String getTipoPessoa() {
+		return tipoPessoa;
+	}
+
+	public void setTipoPessoa(String tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
 	}
 
 	@SuppressWarnings("finally")
@@ -136,7 +145,7 @@ public class Desbravadores {
 		try {
 
 			PermissoesRepository permRepository = new PermissoesRepository();
-			Permissoes permissao = (Permissoes) permRepository.getSelectOneObject(2);
+			Permissoes permissao = (Permissoes) permRepository.getSelectOneObject(Integer.parseInt(this.tipoPessoa));
 
 			PessoaRepository pRepository = new PessoaRepository();
 			Pessoa pessoa = new Pessoa();
